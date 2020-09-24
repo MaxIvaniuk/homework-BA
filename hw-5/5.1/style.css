@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .wrapper {
+    background-color: #1d1c1c;
+    padding: 107px 235px;
+    font-size: 0;
+    color: white;
+  }
+  
+  .icon_wrapper {
+    background-color: #ffae00;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 100px;
+    margin: 0 auto;
+    /*border-radius: 18px 0 18px 0;*/
+    border-top-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+
+  }
+
+  
+
+  
+  .lineDiv {
+    display: inline-block;
+    width: 33.33%;
+    /*background: chocolate;*/
+    text-align: center;
+  }
+  
+  p {
+    font-size: 14px;
+    font-family: "Raleway", sans-serif;
+    line-height: 24px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: normal;
+    margin: 35px 0 40px 0;
+  }
