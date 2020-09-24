@@ -40,7 +40,6 @@
     vertical-align: middle;
 }
 /*розумію що щось неправильно в розмітці або стилях але не розумію що*/
-
 .icon-bg:hover {
     background-color: white;
     border-radius: 50%;
@@ -49,6 +48,7 @@
     margin: 0 auto;
     border: 1px solid #1275b9;
     line-height: 65px;
+
 }
 
 .icon-bg i:hover {
