@@ -48,6 +48,9 @@
     margin: 0 auto;
     border: 1px solid #1275b9;
     line-height: 65px;
+}
+
+.icon-bg i:hover {
     color: #1275b9;
     font-size: 30px; 
     vertical-align: middle;
