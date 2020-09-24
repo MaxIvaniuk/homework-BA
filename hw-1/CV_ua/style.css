@@ -1,0 +1,69 @@
+body{
+	font-family: Arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+#container{
+	width: 1200px;
+    margin: 0px auto;
+}
+
+ul{
+    list-style-type: none;
+}
+
+h2{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: grey;
+}
+
+.my-photo{
+    border-radius: 50%;
+}
+
+.name{
+    display: inline;
+    float: left;
+    background-color: #E6CFE6;
+    width: 25%;
+    height: 800px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+.name p{
+    text-transform: uppercase;
+    display: block;
+    font-size: 28px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.contact{
+    margin-top: 350px ;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.info{
+    display: inline;
+    width: 70%;
+    float: right;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 100px;
+}
+
+.info p{
+    margin-top: 20px;
+    margin-left: 38px;
+}
+
