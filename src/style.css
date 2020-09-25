@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier Prime', monospace;
+}
+
+body {
+    background-color: #cfcfcf;
+}
+
+a {
+    text-decoration: none;
+    color: #66736C;
+}
+
+a:hover {
+    color: #03588C;
+    text-decoration: underline;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.wrapper h1 {
+    margin-bottom: 50px;
+}
+
+ul > li {
+    list-style: square;
+}
+
+ol >li {
+    list-style: none;
+    padding-left: 15px;
+}
+
