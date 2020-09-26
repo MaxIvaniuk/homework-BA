@@ -11,7 +11,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #66736C;
+    color: #57645d;
 }
 
 a:hover {
@@ -28,7 +28,7 @@ a:hover {
 }
 
 .wrapper h1 {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 ul > li {
