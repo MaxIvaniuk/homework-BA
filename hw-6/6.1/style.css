@@ -39,7 +39,7 @@
     font-size: 30px; 
     vertical-align: middle;
 }
-/*розумію що щось неправильно в розмітці або стилях але не розумію що*/
+
 .icon-bg:hover {
     background-color: white;
     border-radius: 50%;
@@ -51,7 +51,7 @@
 
 }
 
-.icon-bg i:hover {
+.icon-bg:hover i{
     color: #1275b9;
     font-size: 30px; 
     vertical-align: middle;
