@@ -28,7 +28,7 @@ ul {
     max-width: 900px;
     margin: 0 auto;
     padding: 30px 0;
-    height: 350px;
+    height: 300px;
     text-align: left;
 }
 
@@ -82,12 +82,12 @@ input[type=checkbox] + label:before {
     color: transparent;
     display: inline-block;
     border: 1px solid #ccc;
-    font-size: 20px;
-    font-weight: 900;
-    line-height: 22px;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 15px;
     margin: -5px 5px 0 0;
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
     text-align: center;
     vertical-align: middle;
 }
