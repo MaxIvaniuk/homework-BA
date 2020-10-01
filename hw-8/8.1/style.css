@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+}
+
+header {
+    background: url('./img/header-bg.png') center center fixed no-repeat;
+    background-size: 100% 100%;
+    height: 100vh;
+    max-height: 800px;
+    background-attachment: scroll;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.head-wrap {
+    height: 180px;
+}
+
+.head-left  {
+    float: left;
+    margin: 20px 0 0 30px;
+}
+
+.head-left p {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    width: 50px;
+    margin: 10px 0 0 30px;
+}
+
+.head-right {
+    float: right;
+    margin: 45px 30px 0 0;
+}
+
+.head-right li {
+    display: inline-block;
+    list-style: none;
+    text-decoration: none;
+    margin-right: 15px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.head-right a {
+    text-decoration: none;
+    font-size: 17px;
+    color: #fff;
+}
+
+.lang-change {
+    border: 1px solid #bfd730;
+    padding: 5px;
+}
+
+.navigation li:hover {
+    border-top: 1px solid #bfd730;
+}
+
+.content-wrp {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1140px;
+    position: relative;
+    height: 65%;
+    text-align: center;
+}
+
+.rectangle {
+    position: absolute;
+}
+
+.content-wrp img:first-child {
+    top: 50px;
+    left: 60px;
+}
+
+.content-wrp img:nth-child(2) {
+    top: 0;
+    right: 0;
+}
+
+.content-wrp img:nth-child(3) {
+    bottom: 25px;
+    left: 0;
+}
+
+.content-wrp img:nth-child(4) {
+    bottom: 0;
+    left: 25px;
+}
+
+.content-wrp img:nth-child(5) {
+    bottom: 65px;
+    right: 0;
+}
+
+.content-wrp img:nth-child(6) {
+    bottom: 35px;
+    right: 30px;
+}
+
+.content-wrp img:nth-child(7) {
+    bottom: 10px;
+    right: 30px;
+}
+
+.carousel {
+    border-left: 5px solid  #bfd730;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    width: 60%;
+    padding: 10px 0 10px 50px;
+}
+
+.carousel p {
+    color: #fff;
+    font-size: 23px;
+    padding: 0 10px;
+}
+
+.carousel span {
+    color: #bfd730;
+}
+
+.carousel a, p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* 
+.carousel a:not(:first-child) {
+    transform: rotate(180deg);
+    vertical-align: middle;
+} */
+
+.carousel h1 {
+    color: #fff;
+    font-size: 65px;
+    line-height: 70px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-top: 30px;
+}
+
+.mouse {
+    position: absolute;
+    left: 50%;
+    margin-top: 20px;
+}
