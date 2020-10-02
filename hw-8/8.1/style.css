@@ -13,12 +13,13 @@
 }
 
 header {
-    background: url('./img/header-bg.png') center center fixed no-repeat;
-    background-size: 100% 100%;
-    height: 100vh;
+    background: url('./img/header-bg.png') center center no-repeat;
+    background-size: cover;
+    height: 800px;
     max-height: 800px;
-    background-attachment: scroll;
-    max-width: 1600px;
+    /* background-attachment: cover; */
+    width: 100%;
+    /* max-width: 1600px; */
     margin: 0 auto;
 }
 
@@ -29,6 +30,10 @@ header {
 .head-left  {
     float: left;
     margin: 20px 0 0 30px;
+}
+
+.head-left a {
+    display: block;
 }
 
 .head-left p {
@@ -44,28 +49,44 @@ header {
     margin: 45px 30px 0 0;
 }
 
-.head-right li {
+/* .search {
+    display: inline-block;
+} */
+
+.navigation li {
     display: inline-block;
     list-style: none;
     text-decoration: none;
     margin-right: 15px;
     padding-top: 10px;
     text-align: center;
+    position: relative;
 }
 
-.head-right a {
+.navigation a {
     text-decoration: none;
     font-size: 17px;
     color: #fff;
 }
 
-.lang-change {
-    border: 1px solid #bfd730;
-    padding: 5px;
+/* .navigation li:hover {
+    border-top: 1px solid #bfd730;
+} */
+
+.navigation li:before {
+    display: block;
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 0;
+    background: #bfd730;
+    transition: width 0.2s ease-in-out;
+    left: 0;
+    top: 0;
 }
 
-.navigation li:hover {
-    border-top: 1px solid #bfd730;
+.navigation li:hover:before {
+    width:80%;
 }
 
 .content-wrp {
