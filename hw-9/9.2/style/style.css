@@ -1,0 +1,14 @@
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e2e7ec;
+}
+
+.row {
+    background-color: royalblue;
+    height: 100px;
+}
