@@ -1,14 +1,68 @@
+@font-face {
+    font-family: 'HansKendrick';
+    src:url("./source/fonts/NeueHansKendrick-Regular.otf"),
+        url('./source/fonts/NeueHansKendrick-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
-    box-sizing: content-box;
+    box-sizing: border-box;
+    font-family: 'HansKendrick';
     margin: 0;
     padding: 0;
 }
 
+/* 
+не працює...
 body {
-    background: #e2e7ec;
+    background-color: #e2e7ec;
+} */
+
+.col-8 {
+    background-image: url(./source/img/car-img.png);
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-.row {
-    background-color: royalblue;
-    height: 100px;
+.big-item {
+    position: relative;
+}
+
+.big-item__descr {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    width: 50%;
+}
+
+.big-item__header {
+    color: #fff;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.small-item {
+    background-color: #fff;
+}
+
+.small-item__descr {
+    padding: 20px;
+}
+
+.item__date {
+    color: #929292;
+    font-size: 13px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.small-item__header {
+    font-size: 22px;
+    padding: 20px 40px 50px 0;
+    text-transform: uppercase;
+}
+
+.no-date {
+    height: 20px;
 }

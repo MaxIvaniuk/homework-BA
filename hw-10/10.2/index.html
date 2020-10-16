@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="redactor">
+        <div class="redactor__instruments">
+            <div class="redactor__text-input">
+                <div>
+                    <label for="title">Title</label>
+                </div>
+                <input type="text" id="title" value="Like Tears In Ra">
+            </div>
+            <div class="redactor__toolkit">
+                <ul>
+                    <li class="redactor__toolkit__item">
+                        <input type="color" id="color">
+                        <label for="color"><img src="./source/img/format_color_text.png" alt="format_color_text"></label>
+                    </li>
+                    <li class="redactor__toolkit__item size_formating">
+                        <select name="text-size" id="text-size">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                        </select>
+                        <label for="text-size"><img src="./source/img/format_size.png" alt="format_size"></label>
+                    </li>
+                    <li class="redactor__toolkit__item file-add">
+                        <label for="file">
+                            <img src="./source/img/insert_photo.png" alt="insert_photo">
+                            <input type="file" id="file">
+                        </label>
+                        
+                    </li>
+                    <li class="redactor__toolkit__item">
+                        <input type="radio" id="bold">
+                        <label for="bold"><img src="./source/img/format_bold.png" alt="format_bold"></label>
+                    </li>
+                    <li class="redactor__toolkit__item">
+                        <input type="radio" id="italic">
+                        <label for="italic"><img src="./source/img/format_italic.png" alt="format_italic"></label>
+                    </li>
+                    <li class="redactor__toolkit__item">
+                        <input type="radio" id="underline">
+                        <label for="underline"><img src="./source/img/format_underline.png" alt="format_underline"></label>
+                    </li>
+                    <li class="redactor__toolkit__item">
+                        <input type="radio" id="align_justify">
+                        <label for="align_justify"><img src="./source/img/format_align_justify.png" alt="format_align_justify"></label>
+                    </li>
+                    <li class="redactor__toolkit__item">
+                        <input type="radio" id="align_left">
+                        <label for="align_left"><img src="./source/img/format_align_left.png" alt="format_align_left"></label>
+                    </li>
+                    <li class="redactor__toolkit__item">
+                        <input type="radio" id="align_center">
+                        <label for="align_center"><img src="./source/img/format_align_center.png" alt="format_align_center"></label>
+                    </li>
+                    <li class="redactor__toolkit__item">
+                        <input type="radio" id="align_right">
+                        <label for="align_right"><img src="./source/img/format_align_right.png" alt="format_align_right"></label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="redactor__text">
+            <div class="redactor__text__wrapper">
+                <p>Roy Batty, 2019</p>
+                <h1>Like Tears in Rain</h1>
+                <p>Where am I going? How long have I got?</p>
+                <p class="redactor__text-p">I've seen things you people wouldn't believe. Attack ships on fire off the shoulder of Orion. I watched C-beams glitter in the dark near the Tannhauser gate. All those moments will be lost in time... like tears in rain... Time to die.</p>
+                <p class="redactor__text-p">I don't know why he saved my life. Maybe in those last moments he loved life more than he ever had before. Not just his life - anybody's life; my life. All he'd wanted were the same answers...</p>
+            </div>
+        </div>
+    </section>
+    <script src="https://kit.fontawesome.com/b0a139f527.js" crossorigin="anonymous"></script>
+</body>
+</html>

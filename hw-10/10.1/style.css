@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'LatoBold';
+    src: url('fonts/Lato-Bold.eot'); /* IE9 Compat Modes */
+    src: url('fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/Lato-Bold.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/Lato-Bold.woff') format('woff'), /* Modern Browsers */
+         url('fonts/Lato-Bold.ttf') format('truetype');
+    font-family: 'LatoLight';
+    src: url('fonts/Lato-Light.eot'); /* IE9 Compat Modes */
+    src: url('fonts/Lato-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/Lato-Light.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/Lato-Light.woff') format('woff'), /* Modern Browsers */
+         url('fonts/Lato-Light.ttf') format('truetype');
+    font-family: 'Playfair Display';
+        src: url('Playfairdisplayregular.woff2') format('woff2'), 
+             url('Playfairdisplayregular.woff') format('woff'), 
+             url('Playfairdisplayregular.ttf') format('truetype');
+    font-family: 'LatoLightItalic';
+        src: url('fonts/Lato-LightItalic.eot'); /* IE9 Compat Modes */
+        src: url('fonts/Lato-LightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('fonts/Lato-LightItalic.woff2') format('woff2'), /* Modern Browsers */
+             url('fonts/Lato-LightItalic.woff') format('woff'), /* Modern Browsers */
+             url('fonts/Lato-LightItalic.ttf') format('truetype');
+             
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.text-container {
+    width: 80%;
+    /* height: 100%; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    background-color: #fff;
+    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.27);
+}
+
+.article {
+    padding: 5%;
+}
+
+.article h1 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 32px;
+    padding-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.article p {
+    font-family: 'LatoLight', sans-serif;
+    font-size: 14px;
+    line-height: 28px;
+    color: #aeaeae;
+    margin-bottom: 30px;
+}
+
+.letter::first-letter {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 100px;
+    color: black;
+    padding: 25px;
+    padding-left: 0;
+    float: left;
+}
+
+.q-container {
+    height: 90px;
+    position: relative;
+    margin-top: 50px;
+}
+
+.article span {
+    font-family: 'LatoLightItalic', sans-serif;
+    font-size: 20px;
+    color: #5c5c5c;
+    margin-left: 50px;
+}
+
+.article span::before {
+    content: "\0022";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    font-size: 60px;
+}
+
+.button {
+    display: block;
+    padding: 20px 60px;
+    text-transform: uppercase;
+    background-color: #fff;
+    color: #eaa258;
+    border: 3px solid #eaa258;
+}
