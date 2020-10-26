@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>        
+        <div class="modal">
+            <!-- <div class="modal__mask"></div> -->
+            <div class="modal__wrapper">
+                <div class="modal__body">
+                    <input type="radio" checked class="tab__sign-in" name="radio" id="sign-in">
+                    <label for="sign-in">Sign In</label>
+                    <input type="radio"  class="tab__join-us" name="radio" id="join-us">
+                    <label for="join-us">Join Us</label>
+                    <div class="modal__authorization">
+                        <form action="#" method="get">
+                            <div class="modal__data">
+                                <label for="user">Username</label>
+                                <input type="text" name="user" id="user" minlength="3">
+                                <div class="modal__error">error</div>
+                            </div>
+
+                            <div class="modal__data">
+                                <label for="pass">Password</label>
+                                <input type="password" name="pass" id="pass" minlength="3">
+                                <div class="modal__error">error</div>
+                            </div>
+
+                            <div class="modal__checkbox">
+                                <input type="checkbox" name="keep-sign" id="keep-sign" checked>
+                                <label for="keep-sign">Keep me signed in</label>
+                            </div>
+
+                            <div class="modal__button">
+                                <button type="submit">Sign In</button>
+                            </div>
+
+                            <div class="modal__links">
+                                <div>
+                                    <a href="#">Forgot password</a>
+                                </div>
+                                <div>
+                                    <a href="#">Create an account</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal__registration">
+                        <form action="#" method="get">
+                            <div class="modal__data">
+                                <label for="user-reg">Username</label>
+                                <input type="text" name="user-reg" id="user-reg" minlength="3">    
+                                <div class="modal__error">error</div>
+                            </div>
+
+                            <div class="modal__data">
+                                <label for="pass-reg">Password</label>
+                                <input type="password" name="pass-reg" id="pass-reg" required minlength="3">
+                                <div class="modal__error">error</div>    
+                            </div>
+
+                            <div class="modal__data">
+                                <label for="pass-repeat">Repeat password</label>
+                                <input type="password" name="pass-repeat" id="pass-repeat" required minlength="3">    
+                            </div>
+                            <div class="modal__button">
+                                <button type="submit">Join Us</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
