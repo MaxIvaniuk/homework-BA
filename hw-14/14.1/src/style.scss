@@ -1,0 +1,63 @@
+@import 'mixin';
+@import 'variables';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+}
+
+.main_wrapper {
+    @include centerProp;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.wrapper {
+    max-width: 1140px;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.team__item {
+    @include centerProp;
+    flex-wrap: wrap;
+
+    .item__header {
+        width: 100%;
+        
+        p {
+            text-transform: uppercase;
+            color: $colorGrey;
+            font-size: 18px;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            color: $colorGold;
+            font-size: 60px;
+        }
+    }
+    
+    .item__img {
+        width: 60%;
+        height: 100%;
+        border: 2px solid $colorGold;
+        div {
+            
+            img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+    
+    .item__description {
+        width: 40%;
+    }
+}
+
