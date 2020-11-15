@@ -85,8 +85,7 @@ body {
             align-items: center;
             padding-top: 50px;
             margin-bottom: 215px;
-            
-            
+            animation-duration: 2s;
         }
 
         .header__logo {
@@ -172,6 +171,7 @@ body {
             .main__nav {
                 display: inline-flex;
 
+
                 .header__nav-item {
                     margin-left: 20px;
                     list-style: none;
@@ -216,6 +216,8 @@ body {
         }
 
         .header__description {
+
+            animation-duration: 2s;
 
             .description__header {
                 font-family: 'Raleway', sans-serif;

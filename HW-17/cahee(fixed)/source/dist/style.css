@@ -77,6 +77,7 @@ body {
   align-items: center;
   padding-top: 50px;
   margin-bottom: 215px;
+  animation-duration: 2s;
 }
 .header .header__wrapper .header__logo {
   float: left;
@@ -180,6 +181,9 @@ body {
   background-color: #ff6033;
   top: -10px;
   left: 0;
+}
+.header .header__wrapper .header__description {
+  animation-duration: 2s;
 }
 .header .header__wrapper .header__description .description__header {
   font-family: "Raleway", sans-serif;
