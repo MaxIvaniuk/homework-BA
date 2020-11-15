@@ -1,0 +1,121 @@
+body { font-size:62.5%; margin:1em; background:#232425 }
+ul { list-style:none; margin:0; padding:0 }//Обнули значения списков
+.watch { font-size:1em; position:relative }
+.watch__face {//Фон для наших часов
+  position:relative;
+  width:30em;
+  height:30em;
+  margin:2em auto;
+  border-radius:15em;
+  background: #fff;
+  box-shadow:rgba(0,0,0,.8) .5em .5em 4em;
+}
+.minute-marks li {//Стиль для первых 48 делений
+  display:block;
+  width:.2em;
+  height:.6em;
+  background:#929394;
+  position:absolute;
+  top:50%; left:50%;
+  margin:-.4em 0 0 -.1em;
+}
+.digits {//Блок с 12 делениями часов
+  width:30em;
+  height:30em;
+  border-radius:15em;
+  position:absolute;
+  top:0; left:50%;
+  margin-left:-15em;
+}
+.digits li {//Стили для каждого из 12 делений
+  font-size:1.6em;
+  display:block;
+  width:1.6em;
+  height:1.6em;
+  position:absolute;
+  top:50%; left:50%;
+  line-height:1.6em;
+  text-align:center;
+  margin:-.8em 0 0 -.8em;
+  font-weight:bold;
+}
+.hours-hand {// Стрелка часов
+  width:.8em;
+  height:7em;
+  border-radius:0 0 .9em .9em;
+  background:#232425;
+  position:absolute;
+  bottom:50%; left:50%;
+  margin:0 0 -.8em -.4em;
+  box-shadow:#232425 0 0 2px;
+  transform-origin:0.4em 6.2em;
+  transform:rotate(-25deg);
+}
+.minutes-hand {// Анимация стрелки минут
+  width:.8em;
+  height:12.5em;
+  border-radius:.5em;
+  background:#343536;
+  position:absolute;
+  bottom:50%; left:50%;
+  margin:0 0 -1.5em -.4em;
+  box-shadow:#343536 0 0 2px;
+  transform-origin:0.4em 11em;
+  transform:rotate(62deg);
+}
+.seconds-hand {// Стрелка секунд
+  width:.2em;
+  height:14em;
+  border-radius:.1em .1em 0 0/10em 10em 0 0;
+  background:#c00;
+  position:absolute;
+  bottom:50%; left:50%;
+  margin:0 0 -2em -.1em;
+  box-shadow:rgba(0,0,0,.8) 0 0 .2em;
+  transform-origin:0.1em 12em;
+  transform:rotate(120deg);
+}
+
+@for $i from 1 through 60 {
+    .minute-marks li:nth-child(#{$i}) {
+        transform: rotate(6deg * $i) translateY(-12.7em);
+  }
+}
+
+@for $a from 1 through 12 {
+    .digits li:nth-child(#{$a}) {
+        transform: rotate(30deg * $a) translateY(-8.7em);
+    }
+}
+
+@keyframes hand-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hours-hand {
+    animation: hand-rotate 43200s linear infinite;
+}
+
+.minutes-hand {
+    animation: hand-rotate 3600s linear infinite;
+}
+
+.seconds-hand {
+    animation: hand-rotate 60s linear infinite;
+}
+
+.minute-marks li:first-child {transform:rotate(6deg) translateY(-12.7em)}
+.minute-marks li:nth-child(2) {transform:rotate(12deg) translateY(-12.7em)}
+.minute-marks li:nth-child(3) {transform:rotate(18deg) translateY(-12.7em)}
+
+.digits li:nth-child(1) {transform:rotate(30deg) translateY(-8.7em)}
+.digits li:nth-child(2) {transform:rotate(60deg) translateY(-8.7em)}
+.digits li:nth-child(3) {transform:rotate(90deg) translateY(-8.7em)}
+
+

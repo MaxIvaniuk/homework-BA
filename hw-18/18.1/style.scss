@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    background-color: #abc;
+}
+
+.deck {
+    width: 600px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    &__cards {
+        position: relative;
+        width: 200px;
+        height: 280px;
+    }
+}
+
+.card {
+    position: absolute;
+    left: -200px;
+    background-color: #fff;
+    border: 1px solid #000;
+    width: 200px;
+    height: 280px;
+
+    @for $c from 1 through 37 {
+        &[for="#{$c}"] {
+          z-index: 37 - $c;
+          left: -200px - $c * .75;
+          top: ($c - 1) * .75px;
+        }
+    }
+
+    &__face {
+        transition: .5s;
+
+        &_back {
+            background-image: url(../img/card.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition-delay: 1s;
+
+            // transform: perspective(200px) rotate(-90deg);
+        }
+
+        &_up {
+            position: relative;
+
+            transform: rotateY(90deg);
+
+            width: 100%;
+            height: 100%;
+            transition: 1s
+        }
+    }
+
+    .card__suit {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &_top {
+            top: 20px;
+            left: 20px;
+        }
+
+        &_bottom {
+            bottom: 20px;
+            right: 20px;
+            transform: rotate(180deg);
+            flex-direction: column-reverse;
+        }
+
+        img {
+            margin-top: 10px;
+            width: 25px;
+            height: 25px;
+        }
+
+        .card__value {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 40px;
+        }
+    }
+
+    &__changer {
+        position: absolute;
+        visibility: hidden;
+
+        &:checked {
+            + .card {
+                animation: switch 2s ease-in-out both;
+
+                .card__face {
+                    &_back {
+                        transform: perspective(500px) rotateY(90deg);
+                    }
+    
+                    &_up {
+                        transform: perspective(500px) rotateY(180deg);
+                        transition-delay: 1s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes switch {
+    0% {
+        left: -200px;
+        z-index: 36;
+        transform: rotateY(0deg);
+    }
+
+    25% {
+        z-index: 36;
+    }
+
+    50% {
+        transform: rotateY(90deg);
+
+    }
+
+    100% {
+        left: 200px;
+        z-index: 0;
+        transform: rotateY(180deg);
+
+    }
+}
