@@ -184,3 +184,12 @@
     font-weight: 300;
     padding-bottom: 15px;
 }
+
+/* Services */
+
+.services {
+    width: 100%;
+    background-color: #70bfff;
+    max-height: 800px;
+    height: 100%;
+}
