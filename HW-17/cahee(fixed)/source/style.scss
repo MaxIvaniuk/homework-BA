@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Pacifico';
-    src: url('./fonts/Pacificoregular.woff2') format('woff2'),
-         url('.fonts/Pacificoregular.woff') format('woff'), 
-         url('.fonts/Pacificoregular.ttf') format('truetype');
+    src: url('../fonts/Pacificoregular.woff2') format('woff2'),
+         url('../fonts/Pacificoregular.woff') format('woff'), 
+         url('../fonts/Pacificoregular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -70,21 +70,22 @@ body {
     width: 100%;
     height: 100%;
     background-color: #f9f8fb;
+    position: relative;
     
     .header__wrapper {
-           
+        width: 100%;
+        height: 100%;
+        background-image: url(../img/bg-1.png);
+        background-position: center center;
+        background-size: cover; 
+        background-repeat: no-repeat;
     
         .header__container {
             display: flex;
             align-items: center;
             padding-top: 50px;
             margin-bottom: 215px;
-            width: 100%;
-        height: 100%;
-        background-image: url(./img/bg-1.png);
-        background-position: center center;
-        background-size: cover; 
-            
+            animation-duration: 2s;
         }
 
         .header__logo {
@@ -103,7 +104,6 @@ body {
             
             .menu__input {
                 opacity: 0;
-                right: -100%;
                 position: absolute;
         
                 &:checked ~ .menu__btn  {
@@ -124,53 +124,53 @@ body {
                         visibility: hidden;            
                     }
                 }    
-        }
+            }
 
-        .menu__btn {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            display: none;
-
-            top: 50px;
-            right: 30px;
-
-            width: 42px;
-            height: 42px;
-
-            cursor: pointer;
-            z-index: 1;
-
-
-            span {
-                display: block;
+            .menu__btn {
+                display: flex;
+                align-items: center;
                 position: absolute;
-                width: 100%;
-                height: 2px;
-                background-color: #000;
-                top: 0px;
-            }
+                display: none;
 
-            &::before, 
-            &::after {
-                content: '';
-                display: block;
-                position: absolute;
-                width: 100%;
-                height: 2px;
-                background-color: #000;
-                top: -10px
-            }
+                right: 0;
+                top: -30px;
 
-            &::after {
-                top: 10px;
-            }
+                width: 42px;
+                height: 42px;
 
-        }
+                cursor: pointer;
+                z-index: 1;
+
+
+                span {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #000;
+                    top: 0px;
+                }
+
+                &::before, 
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #000;
+                    top: -10px
+                }
+
+                &::after {
+                    top: 10px;
+                }
+            }
         
 
             .main__nav {
                 display: inline-flex;
+
 
                 .header__nav-item {
                     margin-left: 20px;
@@ -184,22 +184,40 @@ body {
                         color: #262626;
                         font-size: 16px;
                         position: relative;
-                    }
+
+                        &:first-child {
+                            transition-delay: 0s;
+                        }
+                        &:nth-child(2) {
+                            transition-delay: 0.3s;
+                        }
+                        &:nth-child(3) {
+                            transition-delay: 0.6s;
+                        }
+                        &:nth-child(4) {
+                            transition-delay: 0.9s;
+                        }
+                        &:nth-child(5) {
+                            transition-delay: 1.2s;
+                        }
                                 
-                    .header__nav-link:hover::before {
-                        content: '';
-                        position: absolute;
-                        height: 3px;
-                        width: 100%;
-                        background-color: #ff6033;
-                        top: -10px;
-                        left: 0;
+                        &:hover::before {
+                            content: '';
+                            position: absolute;
+                            height: 3px;
+                            width: 100%;
+                            background-color: #ff6033;
+                            top: -10px;
+                            left: 0;
+                        }
                     }
                 }
             }
         }
 
         .header__description {
+
+            animation-duration: 2s;
 
             .description__header {
                 font-family: 'Raleway', sans-serif;
@@ -233,6 +251,8 @@ body {
             }
         }
     }
+
+    
 }
 
 // About Us
@@ -662,16 +682,49 @@ body {
 
 // Media querries
 
-@media (max-width: 800px) {
-    .header .header__nav {
-      position: absolute;
-      right: -100px;
-    }
 
-    .menu__btn {
-        display: block;
-    }
-  }
+@media (max-width: 1100px) {
+    .header {
 
+        .header__wrapper {
+
+            .header__nav {
+                
+                .menu__input {
+                    &:checked > .header__nav-link {
+                        right: 50px;
+                        transition: 1s;
+                        
+                        .header__nav-item {
+                            margin-bottom: 10px;
+
+                            .header__nav-link {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+
+                .menu__btn {
+                    display: block;
+                
+                }
+
+                .main__nav {
+                    display: inline-flex;
+                    flex-direction: column;
+                    text-align: right;
+
+                    .header__nav-item {
+                        .header__nav-link {
+                            position: absolute;
+                            right: -100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
