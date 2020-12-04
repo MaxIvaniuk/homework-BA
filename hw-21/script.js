@@ -79,3 +79,94 @@ if (reverse == palindrome){
 } else {
   console.log(`Its not palindrome`);
 }
+
+// Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
+// Працює з числами та словами напр. 'tenet' 'кит на морі романтик'(без пробілів)
+let palindrome = '01010';
+let reverse; // Оголошуємо змінну для перевірки
+let number = palindrome;
+
+number = number.toString(); //Переводимо змінну у строку, якщо дане число
+let splitString = number.split(''); //Розбиваємо отримані дані на масив з окремими значеннями
+let reverseArray = splitString.reverse(); //Перевертаємо цей масив для перевірки
+reverse = reverseArray.join(''); //Перетворюємо перевернуті елементи масиву у строку
+
+if (reverse == palindrome){ //Запускаємо перевірку
+  console.log(`Its palindrome`);
+} else {
+  console.log(`Its not palindrome`);
+}
+
+// Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
+let palindrome = '12584';
+let reverse;
+let number = palindrome;
+
+reverse = ((number % 10) * 10000) + ((number % 100 - number % 10) * 100) + (number % 1000 - number % 100) + ((number % 10000 - number % 1000) / 100) + (number % 100000 - number % 10000) / 10000;
+
+if (palindrome === reverse) {
+  console.log('This is palindrome');
+} else {
+  console.log('This is not palindrome');
+}
+
+// Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести EUR, UAN или AZN, и получает в ответ соответствующую сумму.
+let sum = +prompt('Enter summ in USD'),
+    currency = prompt('Enter your currency(EUR, UAH, AZN)'),
+    result,
+    currencyName;
+
+switch (currency) {
+  case 'EUR': 
+    result =  sum * 0.82;
+    currencyName = 'EUR';
+    break;
+  case 'UAH':
+    result = sum * 28.28;
+    currencyName = 'UAH';
+    break;
+  case 'AZN':
+    result = sum + 1.70;
+    currencyName = 'AZN';
+    break;
+}
+console.log(result.toFixed(1) + currencyName);
+
+// Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
+let sum = 450;
+let result;
+
+if (sum >= 200 && sum <= 300){
+  result =  sum - (sum * 0.03);
+} else if (sum >= 300 && sum <=500){
+  result =  sum - (sum * 0.05);
+} else if ( sum >= 500){
+  result =  sum - (sum * 0.07);
+}
+console.log(result);
+
+// Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла. После вопросов выведите пользователю количество набранных баллов.
+let capital = prompt('What is the capital of Great Britain? 1 - London 2 - New York 3 - Paris'),
+    currency = prompt('What is the currency of the USA? 1 - USD 2 - UAH 3 - RMB'),
+    country = prompt('What is the most populated country? 1 - the USA 2 - Japan 3 - China'),
+    score = 0;
+if (capital == 1)
+    score += 2;
+if (currency == 1)
+    score += 2;
+if (country == 3)
+    score += 2;
+alert('Your score is ' + +score);
+
+// Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
+const PI = 3.14;
+let square = +prompt('Периметр квадрата'),
+    squareSide = square / 4,
+    circle = +prompt('Довжина кола'),
+    circleRadius = circle / 2 * PI;
+
+if (circleRadius * 2 <= squareSide) {
+  console.log('окружность поместиться в указанный квадрат');
+} else {
+  console.log('окружность НЕ поместиться в указанный квадрат');
+}
