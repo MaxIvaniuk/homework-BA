@@ -49,6 +49,8 @@ let number = prompt ('enter 3 numbers');
 let result = ((number % 10) * 100) + ((number % 100) - (number % 10)) + ((number - (number % 100)) / 100);
 console.log(result);
 
+123 = 300 + 20 + 1
+
 // 10
 let sum = prompt("Сума вкладень");
 const RATE = 0.05 / 12;
