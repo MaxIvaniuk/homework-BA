@@ -52,9 +52,8 @@ function perfectNumber(n) {
 
 function diapasone(n1, n2) {
   let result = 0;
-  for(let num = n1; num <= n2; num++) { // Diapasone counter
-    // console.log(num);
-    perfectNumber(num);
+  for(let number = n1; number <= n2; number++) {
+    perfectNumber(number);
   }
 }
 diapasone(1, 8);
@@ -83,7 +82,6 @@ function time(hour, minute, second){
 time(12, 12, 30)
 
 // Написать функцию, которая принимает количество секунд, переводит их в часы, минуты и секунды и возвращает в виде строки «чч:мм:сс».
-
 function time(second){
   
   let hourInSeconds = Math.trunc(second / 3600);
@@ -112,5 +110,4 @@ function timeDifference(hour1, minute1, seconds1, hour2, minute2, seconds2){
     return console.log('Difference in time is: ' + hourInSeconds + ':' + minuteInSeconds + ':' + leftSeconds);
   
   }
-  
   timeDifference(01, 20, 59, 20, 14, 30);
