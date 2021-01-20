@@ -1,113 +1,136 @@
-// 1) Написать функцию, которая принимает 2 числа и возвращает -1, если первое меньше, чем второе; 1 – если первое больше, чем второе; и 0 – если числа равны.
-function numbers(num1, num2){
-  if (num1 < num2) {
-    return console.log(-1);
-  } else if (num1 > num2){
-    return console.log(1);
-  } else {
-    return console.log(0);
-  }
-}
-numbers(7, 6)
+const array = [1, 2, -3, 2.5, -4, 0, 8, 12];
 
-// 2) Написать функцию, которая вычисляет факториал переданного ей числа.
-function factorial(n){
-  if (n != 1){
-  return n * factorial(n - 1);
-  } else {
-  return 1;
-  }
-}
-console.log(factorial(5));
+// Дан массив с числами. Создайте новый массив, состоящий из квадратов этих чисел.
+let arrayToSquare = [];
+array.forEach(el => arrayTiSquare.push(el**2));
+console.log("arraySquare", arraySquare);
 
-// 4) Написать функцию, которая принимает длину и ширину прямоугольника и вычисляет его площадь. Если в функцию передали 1 параметр, то она вычисляет площадь квадрата.
-function square(a, b) {
-  return (arguments.length == 2) ? a * b : a * a;
-}
-console.log(square(5));
+// Дан массив с числами. Найдите сумму этих чисел. 
+let arraySum = 0;
+array.forEach(el => arraySum += el);
+console.log("arraySum", arraySum);
 
-// 5) Написать функцию, которая проверяет, является ли переданное ей число совершенным. Совершенное число – это число, равное сумме всех своих собственных делителей.
-function perfectNumber(n) {
-  let result = 0;
-  for(let i = 0; i < n; i++) {
-    if(n % i == 0){
-      result += i;
+// Дан массив с числами. Сделайте из него массив, состоящий из квадратов этих чисел.
+
+let arrayMap = array.map(el => el**2);
+console.log("arrayMap", arrayMap);
+
+// Дан массив с числами. Проверьте то, что все элементы в массиве больше нуля.
+
+let areEveryPos = array.every(el => el > 0 ? true : false);
+
+console.log("areEveryPos", areEveryPos);
+
+// Дан массив с числами. Проверьте то, что в нем есть отрицательные элементы.
+
+let areSomeNeg = array.some(el => el < 0 ? true : false);
+
+console.log("areSomeNeg", areSomeNeg);
+
+// Дан массив с числами. Оставьте в нем только отрицательные числа.
+
+let arrayNeg = array.filter(el => el < 0);
+
+console.log("arrayNeg", arrayNeg);
+
+// Дан массив с числами. Оставьте в нем только четные числа.
+
+let arrayEven = array.filter(el => !(el % 2));
+
+console.log("arrayEven", arrayEven);
+
+// Дан массив со строками. Оставьте в нем только те строки, длина которых больше 5-ти символов.
+
+const arrayStrings = ['bla', 'bl', 'blabla', 'blablabla', 'b'];
+
+let strMoreThan5 = arrayStrings.filter(el => el.length > 5);
+
+console.log("strMoreThan5", strMoreThan5);
+
+// Дан массив, в нем могут быть обычные элементы и подмассивы, например [1, 2, [3, 4], 5, [6, 7]]. Оставьте в нем только подмассивы.
+
+const arr = [1, 2, [3, 4], 5, [6, 7]];
+
+let arrayOfArrays = arr.filter(el => Array.isArray(el));
+
+console.log("arrayOfArrays", arrayOfArrays);
+
+// Дан массив с числами. Посчитайте количество отрицательных чисел в этом массиве.
+
+let numOfNeg = array.filter(el => el < 0).length;
+
+console.log("numOfNeg", numOfNeg)
+
+// Дан массив с числами. Найдите сумму этих чисел. 
+
+let sum = array.reduce((prevVal, curVal) => prevVal + curVal);
+
+console.log("sum", sum);
+
+//  Дан массив с числами. Найдите сумму первых N элементов до первого нуля. 
+// Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем первые 3 элемента, так как дальше стоит элемент с числом 0. 
+let wasZero = false;
+
+let sumBeforeZero = array.reduce((prevVal, curVal) => {
+    if (curVal == 0 || wasZero) {
+        wasZero = true;
+        return prevVal;
+    } else {
+        return prevVal + curVal
     }
-  }
-  return (result == n) ? console.log(n + ` Досконале число`) : console.log(n + ` Не досконале число`);
-}
+}, 0);
 
-perfectNumber(5);
+console.log("sumBeforeZero", sumBeforeZero);
 
-// Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
-function perfectNumber(n) {
-  let result = 0;
-  for(let i = 0; i < n; i++) {
-    if(n % i == 0){
-      result += i;
+// Дан массив с числами. Найдите сумму последних N элементов до первого нуля с конца. 
+// Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем последние 3 элемента, так как дальше стоит элемент с числом 0.
+wasZero = false;
+
+let sumBeforeZeroR = array.reduceRight((prevVal, curVal) => {
+    if (curVal == 0 || wasZero) {
+        wasZero = true;
+        return prevVal;
+    } else {
+        return prevVal + curVal
     }
-  }
-  return (result == n) ? console.log(n + ` Досконале число`) : console.log(n);
-}
+}, 0);
 
-function diapasone(n1, n2) {
-  let result = 0;
-  for(let number = n1; number <= n2; number++) {
-    perfectNumber(number);
-  }
-}
-diapasone(1, 8);
+console.log("sumBeforeZeroR", sumBeforeZeroR);
 
-// Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00
-function time(hour, minute, second){
-  if (minute == undefined && second == undefined) {
-    minute = `00`;
-    second = `00`;
-  } else if (second == undefined){
-    second = `00`;
-  } else if (minute == undefined ) {
-    minute = `00`;
-  }
-  return console.log(hour + `:` + minute + `:` + second);
-}
-time(12)
+//  Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, чтобы в сумме получилось больше 10-ти.
 
-// Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.
+let quantity = 1;
 
-function time(hour, minute, second){
-  let secondsInMinute = 60;
-  let secondsInHour = 3600;
-  return console.log(hour * secondsInHour + minute * secondsInMinute + second + ` секунд`);
-}
-time(12, 12, 30)
+array.reduce((prevVal, curVal) => {
+    let sum = prevVal + curVal 
+    if (sum < 10) {
+        quantity++;
+        return sum;
+    }
+});
 
-// Написать функцию, которая принимает количество секунд, переводит их в часы, минуты и секунды и возвращает в виде строки «чч:мм:сс».
-function time(second){
-  
-  let hourInSeconds = Math.trunc(second / 3600);
-  let minuteInSeconds = Math.trunc((second - hourInSeconds * 3600) / 60);
-  let leftSeconds = Math.trunc(second - ((hourInSeconds * 3600) + (minuteInSeconds * 60)))
-  return console.log(hourInSeconds + ':' + minuteInSeconds + ':' + leftSeconds);
-}
-// time(12, 12, 30)
-time(43950);
+console.log("quantity", quantity);
 
-// Написать функцию, которая считает разницу между датами. Функция принимает 6 параметров, которые описывают 2 даты, и возвращает результат в виде строки «чч:мм:сс». При выполнении задания используйте функции из предыдущих 2-х заданий: сначала обе даты переведите в секунды, узнайте разницу в секундах, а потом разницу переведите обратно в «чч:мм:сс»
-function timeDifference(hour1, minute1, seconds1, hour2, minute2, seconds2){
-  //     hours to seconds
-    let secondsInMinute = 60;
-    let secondsInHour = 3600;
-    let totalTime1 = hour1 * secondsInHour + minute1 * secondsInMinute + seconds1;
-    console.log(totalTime1);
-    let totalTime2 = hour2 * secondsInHour + minute2 * secondsInMinute + seconds2;
-    console.log(totalTime2);
-    let differenceInTime = totalTime2 - totalTime1;
-    console.log(differenceInTime);
-  // seconds to hour
-    let hourInSeconds = Math.trunc(differenceInTime / 3600);
-    let minuteInSeconds = Math.trunc((differenceInTime - hourInSeconds * 3600) / 60);
-    let leftSeconds = Math.trunc(differenceInTime - ((hourInSeconds * 3600) + (minuteInSeconds * 60)))
-    return console.log('Difference in time is: ' + hourInSeconds + ':' + minuteInSeconds + ':' + leftSeconds);
-  
-  }
-  timeDifference(01, 20, 59, 20, 14, 30);
+// Дан массив с числами. Узнайте сколько элементов с конца массива надо сложить, чтобы в сумме получилось больше 10-ти. 
+
+quantity = 1;
+
+array.reduceRight((prevVal, curVal) => {
+    let sum = prevVal + curVal 
+    if (sum < 10) {
+        quantity++;
+        return sum;
+    }
+});
+
+console.log("quantityRight", quantity);
+
+// Дан массив с числами. Оставьте в нем только положительные числа. Затем извлеките квадратный корень из этих чисел.
+
+let sqrtArr = array.filter(el => el > 0).map(el => Math.sqrt(el));
+
+console.log("sqrtArr", sqrtArr);
+
+
+
+
