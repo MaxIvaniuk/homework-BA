@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+
+@mixin mainFont {
+    font-family: 'Poppins', sans-serif;
+    color: #303030;
+    text-transform: uppercase;
+}
+
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1250px;
+
+    .header{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 100px;
+
+        &__text{
+            @include mainFont;
+            font-size: 18px;
+            line-height: 19px;
+            margin-bottom: 20px;
+        }
+
+        &__heading{
+            @include mainFont;
+            font-size: 80px;
+            line-height: 85px;
+        }
+    }
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    .slick-prev, .slick-prev:hover, .slick-prev:focus, {
+        width: 100px;
+        height: 100px;
+        left: 30px;
+        z-index: 999;
+        background-image: url(../../src/img/prev.png);
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &::before{
+            content: '';
+        }
+    }
+
+    .slick-next, .slick-next:hover, .slick-next:focus {
+        width: 100px;
+        height: 100px;
+        right: 30px;
+        z-index: 999;
+        background-image: url(../../src/img/next.png);
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &::before{
+            content: '';
+        }
+    }
+}
