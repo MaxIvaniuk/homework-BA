@@ -1,95 +1,95 @@
-// // 1) Реализовать класс, описывающий окружность. В классе должны быть следующие компоненты:
+// 1) Реализовать класс, описывающий окружность. В классе должны быть следующие компоненты:
 
-// //     поле, хранящее радиус окружности;
-// class Circle {
-//   constructor(radius){
-//     this.radius = radius;
-//   }
-//   //     get-свойство, возвращающее радиус окружности;
-//   get getRadius(){
-//     console.log(`Radius of circle: ${this.radius}`);
-//   }
-//   //     set-свойство, устанавливающее радиус окружности;
-//   set setRadius(radiusNew){
-//     this.radius = radiusNew;
-//   }
-//   //     get-свойство, возвращающее диаметр окружности;
-//   get getDiameter(){
-//     console.log(`Diameter of circle: ${this.radius / 2}`);
-//   }
-//   //     метод, вычисляющий площадь окружности;
-//   circleSquare(){
-//     console.log(`Square of circle: ${Math.PI + this.radius ** 2}`)
-//   }
-//   //     метод, вычисляющий длину окружности.
-//   circleLength(){
-//     console.log(`Length of circle: ${2 * Math.PI + this.radius}`)
-//   }
-// }
+//     поле, хранящее радиус окружности;
+class Circle {
+  constructor(radius){
+    this.radius = radius;
+  }
+  //     get-свойство, возвращающее радиус окружности;
+  get getRadius(){
+    console.log(`Radius of circle: ${this.radius}`);
+  }
+  //     set-свойство, устанавливающее радиус окружности;
+  set setRadius(radiusNew){
+    this.radius = radiusNew;
+  }
+  //     get-свойство, возвращающее диаметр окружности;
+  get getDiameter(){
+    console.log(`Diameter of circle: ${this.radius / 2}`);
+  }
+  //     метод, вычисляющий площадь окружности;
+  circleSquare(){
+    console.log(`Square of circle: ${Math.PI + this.radius ** 2}`)
+  }
+  //     метод, вычисляющий длину окружности.
+  circleLength(){
+    console.log(`Length of circle: ${2 * Math.PI + this.radius}`)
+  }
+}
 
 
-// // Продемонстрировать работу свойств и методов. 
-// let circle = new Circle(10);
+// Продемонстрировать работу свойств и методов. 
+let circle = new Circle(10);
 
-// circle.getRadius;
-// circle.setRadius = 3;
-// circle.getDiameter;
-// circle.circleSquare;
-// console.log(circle.circleSquare());
-// console.log(circle.circleLength());
+circle.getRadius;
+circle.setRadius = 3;
+circle.getDiameter;
+circle.circleSquare;
+console.log(circle.circleSquare());
+console.log(circle.circleLength());
+
+
 
 // 2) Реализовать класс, описывающий простой маркер. В классе должны быть следующие компоненты:
+    // поле, которое хранит цвет маркера;
+    // поле, которое хранит количество чернил в маркере (в процентах);
 
-//     поле, которое хранит цвет маркера;
-//     поле, которое хранит количество чернил в маркере (в процентах);
-//     метод для печати (метод принимает строку и выводит текст соответствующим цветом; текст выводится до тех пор, пока в маркере есть чернила; один не пробельный символ – это 0,5% чернил в маркере).
+class Marker {
+  constructor(color, ink){
+    this.color = color;
+    this.ink = parseFloat(ink);
+  }
 
-// class Marker {
-//   constructor(color, ink){
-//     this.color = color;
-//     this.ink = parseFloat(ink);
-//   }
-  
-//   print(string){
-//     let index;
+    // метод для печати (метод принимает строку и выводит текст соответствующим цветом; текст выводится до тех пор, пока в маркере есть чернила; один не пробельный символ – это 0,5% чернил в маркере).
+  print(string){
+    let index;
     
-//     for(let symbol of string){
-//       index = string.indexOf(symbol);
+    for(let symbol of string){
+      index = string.indexOf(symbol);
       
-//       // if(symbol != ' '){
-//       //   this.ink -= 0.5;
-//       //   console.log(this.ink)
-//       // } else break;
+      // if(symbol != ' '){
+      //   this.ink -= 0.5;
+      //   console.log(this.ink)
+      // } else break;
 
-//       if(symbol != ' '){
-//         if(this.ink){
-//           this.ink -= 0.5;
-//           console.log(this.ink) 
-//         } else break;
-//       } 
-//     }
+      if(symbol != ' '){
+        if(this.ink){
+          this.ink -= 0.5;
+          console.log(this.ink) 
+        } else break;
+      } 
+    }
     
-//     let printedText = string.substr(0, index + 1);
-//     document.write(`<p style="color: ${this.color}">${printedText}</p>`);
-//   }
-// }
+    let printedText = string.substr(0, index + 1);
+    document.write(`<p style="color: ${this.color}">${printedText}</p>`);
+  }
+}
 
+// Реализовать класс, описывающий заправляющийся маркер, унаследовав его от простого маркера и добавив метод для заправки маркера.
+class LoadingMarker extends Marker {
+    loadMarker(percent) {
+        if (percent >= 0) {
+            let inks = this.ink + percent;
+            this.ink = inks > 100 ? 100 : inks;
+        } else console.log("ERROR");
+    }
+}
 
-// // Реализовать класс, описывающий заправляющийся маркер, унаследовав его от простого маркера и добавив метод для заправки маркера.
+let marker = new LoadingMarker("red", 15);
+marker.print("Hello world");
+marker.loadMarker(10);
+console.log(marker.ink);
 
-// class LoadingMarker extends Marker {
-//     loadMarker(percent) {
-//         if (percent >= 0) {
-//             let inks = this.ink + percent;
-//             this.ink = inks > 100 ? 100 : inks;
-//         } else console.log("ERROR");
-//     }
-// }
-
-// let marker = new LoadingMarker("red", 15);
-// marker.print("Hello world");
-// marker.loadMarker(10);
-// console.log(marker.ink);
 
 
 //3) Реализовать класс Employee, описывающий работника, и создать массив работников банка.

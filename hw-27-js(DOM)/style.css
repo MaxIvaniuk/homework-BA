@@ -1,0 +1,13 @@
+body {
+    background: linear-gradient(rgb(52, 166, 255), rgb(71, 124, 255));
+    height: 100vh;
+  }
+  
+#traffic-light {
+    width: 70px;
+    height: 280px;
+    background: #222;
+    border-radius: 8px;
+    margin: auto;
+    padding: 15px;
+}

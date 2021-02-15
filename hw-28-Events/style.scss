@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin containerBorders {
+    width: 100%;
+    margin: 100px 0;
+}
+
+
+.redactor {
+    @include containerBorders;
+
+    .text-area {
+        margin: 0 auto;
+        width: 400px;
+        border: 1px solid #000;
+        padding: 20px 40px;
+        background-color: #D59595;
+        cursor: pointer;
+    }
+}
+
+.car_list {
+    @include containerBorders;
+
+    .table{
+        margin: 0 auto;
+        font-family: sans-serif;
+        // color: #4D4D4D;
+        background-color: #999; 
+        padding: 15px;
+        width: 300px;
+
+        &_header {
+            font-size: 1.5em;
+            line-height: 1.5em;
+        }
+
+        &_item {
+            line-height: 20px;
+
+            
+        }
+    }
+}
+// Создать HTML-страницу для отображения/редактирования текста.
+// При открытии страницы текст отображается с помощью тега div. 
+// При нажатии Ctrl + E, вместо div появляется textarea с тем же 
+// текстом, который теперь можно редактировать. При нажатии Ctrl + , 
+// вместо textarea появляется div с уже измененным текстом. Не забудьте 
+// выключить поведение по умолчанию для этих сочетаний клавиш.
