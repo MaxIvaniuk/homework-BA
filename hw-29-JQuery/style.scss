@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+.container{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: rgba($color: #292d3e, $alpha: .9) url(../img/bg-img.png) center center no-repeat;
+    background-size: cover;
+
+    
+
+    .tab_window{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        color: #fff;
+        background-color: #212534;
+
+        .wrapper{
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .tab_control{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: #2b3040;
+            padding: 35px 5%;
+            list-style: none;
+
+            &__item{
+                text-align: center;
+                position: relative;
+
+                .icon {
+                    width: 25px;
+                    height: 25px;
+                    fill: #fff;
+                    opacity: 0.7;
+                }
+
+                > p{
+                    margin-top: 10px;
+                    color: #fff;
+                    text-transform: uppercase;
+                    opacity: 0.7;
+                }
+            }
+
+            &__item{
+                &.active {
+                    .icon {
+                        opacity: 1;
+                    }
+
+                    > p{
+                        opacity: 1;
+                    }
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        bottom: -35px;
+                        left: 0;
+                        height: 2px;
+                        width: 100%;
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+
+        .tab_item{
+            display: none;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 60px 0;
+
+            &.active{
+                display: flex;
+            }
+
+            &__img{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            &__info{
+                margin-left: 40px;
+
+                > .tab__header{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .heading{
+                        margin-bottom: 45px;
+
+                        &__header{
+                            font-size: 32px;
+                            line-height: 32px;
+                            font-weight: 400;
+                            letter-spacing: -1px;
+                            margin-bottom: 15px;
+                        }
+
+                        &__release{
+                            font-size: 14px;
+                            line-height: 14px;
+                            font-weight: 300;
+                        }
+                    }
+                }
+
+                .tab__description{
+                    margin-bottom: 60px;
+
+                    &_text{
+                        font-weight: 300;
+                        font-size: 14px;
+                        line-height: 22px;
+                        color: #b7bacd;
+                    }
+                }
+
+                .tab__buy{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .price{
+                        &__sale{
+                            font-size: 12px;
+                            line-height: 20px;
+                            color: #fedc3f;
+                        }
+
+                        &__current_price {
+                            font-size: 32px;
+                        }
+                    }
+
+                    .submit {
+                        &__button{
+                            font-size: 16px;
+                            color: #fff;
+                            text-transform: uppercase;
+
+                            padding: 20px 35px;
+
+                            background-color: #13e28d;
+                            border-radius: 3px;
+                            outline: none;
+                            border: none;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
